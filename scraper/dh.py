@@ -1,5 +1,6 @@
-from __future__ import annotations
-from utils import * 
+from typing import Dict, Union, Tuple
+from utils.settings import *
+from utils.telegram import CommandBot 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -10,7 +11,7 @@ from bs4 import BeautifulSoup
 
 class DH(CommandBot):
     BASE_URL: str = "http://dh.stjohns.hk/accounts/login"
-    CATALOGUE: dict(dict) = {
+    CATALOGUE: Dict[str, Union[str, Dict[str, str]]] = {
         "login" : {
            "username"       : "id_username", 
             "password"      : "id_password", 
@@ -157,7 +158,7 @@ class DH(CommandBot):
         )        
     
 
-    def get_menu_helper(self, soup: BeautifulSoup) -> tuple[list, str]: 
+    def get_menu_helper(self, soup: BeautifulSoup) -> Tuple[list, str]: 
         def compose_msg(menu: list) -> str:
             return "\n".join(menu)
 
