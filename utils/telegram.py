@@ -1,23 +1,6 @@
-import logging
+from utils.settings import * 
 import telegram 
-import os 
 from telegram.ext import Updater
-from dotenv import load_dotenv
-load_dotenv()
-
-
-TG_GROUP = os.getenv("TG_GROUP")
-TG_TOKEN = os.getenv("TG_TOKEN")
-DH_USERNAME = os.getenv("DH_USERNAME")
-DH_PASSWORD = os.getenv("DH_PASSWORD")
-
-
-logging.basicConfig(
-    filename="logger.log", 
-    format='%(asctime)s %(message)s', 
-    filemode='w', 
-    level=logging.INFO
-)
 
 
 class Bot:

@@ -1,4 +1,4 @@
-from utils import * 
+from utils.settings import * 
 from scraper import scrapers
 
 def main():
