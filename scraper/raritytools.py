@@ -1,6 +1,6 @@
 import pandas as pd
 import datetime 
-from utils import *
+from utils.settings import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import StaleElementReferenceException
